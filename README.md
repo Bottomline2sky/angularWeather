@@ -1,6 +1,6 @@
 # Mansoon
 
-The project provide complete solution for Geo Locations and their updated weather. Here not only user can create his account but also save the places according to his choices. Suggestions are always welocme. Time to time I update it. 
+The project provide complete solution for Geo Locations and their updated weather. Here not only user can create his account but also save the places according to his choices. Suggestions are always welcome. Time to time I update it. 
 
 ## Deployment Platform
 for server side solution used - Heroku<br>
