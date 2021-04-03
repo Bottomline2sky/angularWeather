@@ -1,0 +1,7 @@
+.back {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .5)), url(../assets/cloud.jpg) no-repeat center center /cover;
+}
+.location{
+    border: 2px solid blue;
+}

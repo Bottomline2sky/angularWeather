@@ -1,0 +1,46 @@
+<section>
+     <div class="alert alert-danger" *ngIf="error">
+         <p> {{error}}</p>
+     </div>
+  <div class="container-fluid" *ngIf="!error">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-8">
+        <div class="row pt-md-5 mt-md-3 mb-5">
+          <div class="col-xl-3 col-sm-6 p-2 text-capitalize" *ngFor="let location of locations">
+            <div class="card card-common">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <i class="fas fa-map-marker-alt fa-3x text-warning"></i>
+                  <div class="text-right text-secondary">
+                    <h5>{{location.location.split(" ")[0]}}
+                      {{location.location.split(" ")[location.location.split(" ").length-2]}}
+                      {{location.location.split(" ")[location.location.split(" ").length-1]}}
+                    </h5>
+                    <h6><span>Long: {{location.longitude}}</span><p>Lat: {{location.latitude}}</p></h6>
+                  </div>
+                </div>
+              </div>
+              <a (click)="fwCo(location.latitude,location.longitude,location.location)" style="cursor: pointer"><div class="card-footer text-secondary">
+                <i class="fas fa-sync mr-3"></i>
+                <span><a role="button">Check Now</a></span>
+              </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 p-2" style="height: 50px">
+            <div class="card card-common">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <i class="fas fa-plus fa-3x text-warning"></i>
+                  <div class="text-right text-secondary">
+                    <h5>Search and Add</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

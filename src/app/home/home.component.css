@@ -1,0 +1,7 @@
+.back {
+  height: 150vh;
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .5)), url(../../assets/rain2.jpg) no-repeat center center /cover;
+}
+.adjust{
+   line-height: 1.5;
+}

@@ -1,0 +1,51 @@
+<div class="back" style="width: 100%">
+<div class="row text-white justify-content-center" style="margin-top: 70px" xmlns="http://www.w3.org/1999/html">
+  <div>
+    <p class="display-4">Search:The Weather</p>
+  </div>
+</div>
+<div *ngIf="!isLoading">
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <form (ngSubmit)="onSubmit(f)"   #f="ngForm">
+      <div class="form-group">
+        <label for="location" class="text-danger h3">Location</label>
+        <input type="text" class="form-control location" placeholder="Location..." name="location" ngModel>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-danger btn-block px-4 py-2" type="submit">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="row mt-3" *ngIf="isResponse">
+    <div class="col-12">
+        <h4 class="display-4 text-center text-white adjust" style="font-size: xxx-large">{{weather.location}}</h4>
+    </div>
+      <div  class="col-12 text-center mt-4">
+       <h2 class="display-2 text-white">{{weather.weather.temperature}}<sup>o</sup>
+         <sup class="ml-2">c</sup>
+         <p class="small mt-1" style="font-size: x-large">{{weather.weather.weather_descriptions}}</p>
+        <p class="small" style="font-size: medium"><img [src]= "weather.weather.weather_icons"
+                                                        class="img-responsive m-4"
+          style="max-height: 50px">
+          As Updated At-{{weather.weather.observation_time}}</p>
+       <p class="small" style="font-size: medium">Feels Like: {{weather.weather.feelslike}}
+         <span class="mx-2">Winds Speed: {{weather.weather.wind_speed}}</span>
+       <span class="mx-2">Wind Direction: {{weather.weather.wind_dir}}</span>
+         <span class="mx-2">Visibility: {{weather.weather.visibility}}</span>
+        <span class="mx-2">Pressure: {{weather.weather.pressure}}</span></p>
+         <p class="small" style="font-size: medium">Precipitation: {{weather.weather.precip}}
+           <span class="mx-2">Humidity: {{weather.weather.humidity}}</span>
+           <span class="mx-2">Cloud Cover: {{weather.weather.cloudcover}}</span>
+           <span class="mx-2">uv_index: {{weather.weather.uv_index}}</span>
+           <span class="mx-2">is_Day: {{weather.weather.is_day}}</span></p>
+       </h2>
+       </div>
+</div>
+</div>
+<div class="row justify-content-center" *ngIf="isLoading">
+     <app-load-spinner></app-load-spinner>
+</div>
+</div>
+

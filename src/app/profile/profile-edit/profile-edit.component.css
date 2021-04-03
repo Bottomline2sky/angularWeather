@@ -1,0 +1,4 @@
+#hide input[type=file] {
+  display:none;
+  margin:10px;
+}

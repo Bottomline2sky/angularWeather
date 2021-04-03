@@ -1,0 +1,78 @@
+<div class="backdrop" *ngIf="updateMode" style="margin-top: 68px">
+   <app-profile-edit [currentProfile]="userProfile" (gb)="destroyEdit()"></app-profile-edit>
+</div>
+<div class="container-fluid" style="margin-top: 70px" *ngIf="!updateMode">
+  <div class="main-body">
+    <div class="row gutters-sm">
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img [src]=" imageString? imageString: 'https://bootdey.com/img/Content/avatar/avatar7.png'" alt="User" class="rounded-circle" width="150">
+              <div class="mt-3">
+                <h4 class="font-italic">{{userProfile.name}}</h4>
+                <button class="btn btn-outline-primary">Message</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Full Name</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{userProfile.name}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Email</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{userProfile.email}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Address</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{userProfile.add}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Latitude</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{userProfile.lat}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Longitude</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+               {{userProfile.lon}}
+            </div>
+          </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <button class="btn btn-danger" (click)="toUpdateMode()">Update</button>
+              </div>
+            </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
